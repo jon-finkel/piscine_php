@@ -1,0 +1,98 @@
+table
+{
+	width: 100%;
+	height: 100%;
+}
+
+td
+{
+	border: solid;
+	max-height: 60px;
+	max-width: 60px;
+}
+
+td.actinide
+{
+	background-color:lightcoral;
+}
+
+td.alkali-metal
+{
+	background-color:tomato;
+}
+
+td.alkali-earth-metal
+{
+	background-color:wheat;
+}
+
+td.hallogen
+{
+	background-color:lightyellow;
+}
+
+td.gaz
+{
+	background-color:hsl(178, 50%, 71%);
+}
+
+td.lanthanide
+{
+	background-color:violet;
+}
+
+td.metalloid
+{
+	background-color:tan;
+}
+
+td.postmetal
+{
+	background-color:lightgray;
+}
+
+td.reac-non-metal
+{
+	background-color:lightgreen;
+}
+
+td.transmetal
+{
+	background-color:pink;
+}
+
+td.unknown
+{
+	background-color: rgba(238, 238, 238, 0.89);
+	border:dotted;
+}
+
+div
+{
+	font-size: 1vw;
+}
+
+div.mass
+{
+	color:black;
+	text-align:right;
+}
+
+div.name
+{
+	font-size: 2vw;
+	text-align:center;
+}
+
+div.num
+{
+	text-align: left;
+}
+
+.bitches
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 67%;
+}
