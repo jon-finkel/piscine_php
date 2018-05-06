@@ -4,7 +4,9 @@
     {
         printf("Entrez un nombre: ");
         $value = rtrim(fgets(STDIN));
-        if (!is_numeric($value))
+        if ($value > PHP_INT_MAX)
+            printf("FROMAGE\n");
+        else if (!is_numeric($value))
             printf("'%s' n'est pas un chiffre\n", $value);
         else if ($value % 2)
             printf("Le chiffre %s est Impair\n", $value);
