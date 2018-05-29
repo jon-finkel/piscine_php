@@ -53,18 +53,18 @@
 	        printf("%d\n", $num1 * $num2);
 	}
 	else if ($op === "/") {
-	    if ($num1 / $num2 > PHP_INT_MAX)
-		    echo "Overflow!\n";
- 	    else if ($num2 == 0)
-	        echo "Don't divide by zero...\n";
+        if ($num2 == 0)
+            echo "Don't divide by zero...\n";
+        else if ($num1 / $num2 > PHP_INT_MAX)
+            echo "Overflow!\n";
 	    else
     	    printf("%d\n", $num1 / $num2);
     }
     else if ($op === "%") {
-	    if ($num1 % $num2 > PHP_INT_MAX)
+        if ($num2 == 0)
+            echo "Don't divide by zero...\n";
+	    else if ($num1 % $num2 > PHP_INT_MAX)
 		    echo "Overflow!\n";
-	    else if ($num2 == 0)
-	        echo "Don't divide by zero...\n";
 	    else
     	    printf("%d\n", $num1 % $num2);
     }

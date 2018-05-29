@@ -1,5 +1,7 @@
 #!/usr/bin/php
 <?php
+
+if ($argc == 2) {
     $array = explode(" ", $argv[1], PHP_INT_MAX);
     $max = count($array, COUNT_NORMAL);
     $check = false;
@@ -12,4 +14,6 @@
         }
     if ($check)
         printf("\n");
+}
+
 ?>

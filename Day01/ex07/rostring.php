@@ -4,6 +4,8 @@
     $max = count($array);
     $check = false;
     for ($k = 1; $k < $max; ++$k) {
+        if ($array[$k] == null)
+            continue;
         if ($check == true)
             printf(" ");
         printf("%s", $array[$k]);
