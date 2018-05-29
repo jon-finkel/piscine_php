@@ -1,0 +1,109 @@
+body {
+    font-family: "Source Code Pro", Calibri, serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+nav ul li {
+    float: left;
+    position: relative;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+.submenu {
+    display: none;
+}
+
+nav {
+    width: 100%;
+    background-color: #424558;
+}
+
+nav ul::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav ul li a {
+    padding: 20px 30px;
+    color: #FFF;
+}
+
+nav li:hover .submenu {
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: 100000;
+}
+
+nav ul li::hover a {
+    padding: 15px 30px 20px 30px;
+}
+
+.submenu li {
+    border-bottom: 1px solid #CCC;
+}
+
+.submenu li a {
+    padding: 15px 30px;
+    font-size: 13px;
+    color: #222538;
+    width: 270px;
+}
+
+.menu-salades:hover {
+    border-top: 5px solid #e44d26;
+    background-color: RGBa(228, 77, 38, 0.15);
+}
+
+.menu-sandwichs:hover {
+    border-top: 5px solid #0070bb;
+    background-color: RGBa(0, 112, 192, 0.15);
+}
+
+.menu-boissons:hover {
+    border-top: 5px solid #f1dc4f;
+    background-color: RGBa(241, 211, 79, 0.15);
+}
+
+.menu-desserts:hover {
+    border-top: 5px solid #BBB;
+    background-color: RGBa(220, 220, 220, 0.15);
+}
+
+.menu-salades .submenu {
+    background-color: RGB(230, 100, 40);
+}
+
+.menu-sandwichs .submenu {
+    background-color: RGB(0, 160, 240);
+}
+
+.menu-boissons .submenu {
+    background-color: RGB(251, 216, 99);
+}
+
+.menu-desserts .submenu {
+    background-color: RGB(187, 187, 187);
+}
+
+.submenu li:hover a {
+    color: #EEE;
+    font-weight: bold;
+}
