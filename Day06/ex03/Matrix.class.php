@@ -136,7 +136,7 @@ class Matrix
             $this->_far = $kwargs['far'];
             $this->buildProjMatrix();
         }
-        if ($this->getPreset() != null && self::$verbose == true)
+        if ($this->getPreset() !== null &&self::$verbose == true)
             echo "Matrix " . Matrix::getConstName($this->getPreset()) . ($this->getPreset() == Matrix::IDENTITY ? "" : " preset") . " instance constructed" . PHP_EOL;
     }
 
@@ -199,10 +199,11 @@ class Matrix
     public function transformVertex(Vertex $vtx)
     {
         return (new Vertex( [
-            'x' => $this->getMatrix()['a']['x'] * $vtx->getX() + $this->getMatrix()['a']['y'] + $vtx->getY() + $this->getMatrix()['a']['z'] * $vtx->getZ() + $this->getMatrix()['a']['w'] * $vtx->getW(),
-            'y' => $this->getMatrix()['b']['x'] * $vtx->getX() + $this->getMatrix()['b']['y'] + $vtx->getY() + $this->getMatrix()['b']['z'] * $vtx->getZ() + $this->getMatrix()['b']['w'] * $vtx->getW(),
-            'z' => $this->getMatrix()['c']['x'] * $vtx->getX() + $this->getMatrix()['c']['y'] + $vtx->getY() + $this->getMatrix()['c']['z'] * $vtx->getZ() + $this->getMatrix()['c']['w'] * $vtx->getW(),
-            'w' => $vtx->getW()] ));
+            'x' => $this->getMatrix()['a']['x'] * $vtx->getX() + $this->getMatrix()['a']['y'] * $vtx->getY() + $this->getMatrix()['a']['z'] * $vtx->getZ() + $this->getMatrix()['a']['w'] * $vtx->getW(),
+            'y' => $this->getMatrix()['b']['x'] * $vtx->getX() + $this->getMatrix()['b']['y'] * $vtx->getY() + $this->getMatrix()['b']['z'] * $vtx->getZ() + $this->getMatrix()['b']['w'] * $vtx->getW(),
+            'z' => $this->getMatrix()['c']['x'] * $vtx->getX() + $this->getMatrix()['c']['y'] * $vtx->getY() + $this->getMatrix()['c']['z'] * $vtx->getZ() + $this->getMatrix()['c']['w'] * $vtx->getW(),
+            'w' => $this->getMatrix()['d']['x'] * $vtx->getX() + $this->getMatrix()['d']['y'] * $vtx->getY() + $this->getMatrix()['d']['z'] * $vtx->getZ() + $this->getMatrix()['d']['w'] * $vtx->getW(),
+        ] ));
     }
 
 }

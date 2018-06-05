@@ -28,7 +28,7 @@ Class Vertex
 
     public function __toString()
     {
-        return (sprintf("Vertex( x: %.2f, y: %.2f, z: %.2f, w: %.2f%s )", $this->_x, $this->_y, $this->_z, $this->_w, (self::$verbose == true ? ", $this->_color" : "")));
+        return (sprintf("Vertex( x: %.2f, y: %.2f, z:%.2f, w:%.2f%s )", $this->_x, $this->_y, $this->_z, $this->_w, (self::$verbose == true ? ", $this->_color" : "")));
     }
 
     public static function doc()
