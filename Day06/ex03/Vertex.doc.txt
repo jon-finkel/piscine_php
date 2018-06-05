@@ -1,0 +1,5 @@
+<- Vertex ----------------------------------------------------------------------
+This class handles mathematical vertexes.
+
+An instance is constructed with an array containing cartesian coordinates 'x', 'y', and 'z'. The length (default = 1.0), and color (default = white) can also be included.
+---------------------------------------------------------------------- Vertex ->
