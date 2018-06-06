@@ -7,7 +7,7 @@ class Color
     public $blue;
     public static $verbose = false;
 
-    public function __construct(array $kwargs)
+    public function __construct( array $kwargs )
     {
         if (array_key_exists('rgb', $kwargs)) {
             $this->red = $kwargs['rgb'] >> 16;
@@ -39,17 +39,17 @@ class Color
         echo file_get_contents("./Color.doc.txt");
     }
 
-    public function add(Color $rhs)
+    public function add( Color $rhs )
     {
         return (new Color( ['red' => $this->red + $rhs->red, 'green' => $this->green + $rhs->green, 'blue' => $this->blue + $rhs->blue] ));
     }
 
-    public function sub(Color $rhs)
+    public function sub( Color $rhs )
     {
         return (new Color( ['red' => $this->red - $rhs->red, 'green' => $this->green - $rhs->green, 'blue' => $this->blue - $rhs->blue] ));
     }
 
-    public function mult($f)
+    public function mult( $f )
     {
         return (new Color( ['red' => $this->red * $f, 'green' => $this->green * $f, 'blue' => $this->blue] ));
     }

@@ -9,7 +9,7 @@ Class Vertex
     private $_color;
     public static $verbose = false;
 
-    public function __construct(array $kwargs)
+    public function __construct( array $kwargs )
     {
         $this->_x = $kwargs['x'];
         $this->_y = $kwargs['y'];

@@ -8,7 +8,7 @@ class Vector
     private $_w;
     public static $verbose = false;
 
-    public function __construct(array $kwargs)
+    public function __construct( array $kwargs )
     {
         if (isset($kwargs['orig'])) {
             $this->_x = $kwargs['dest']->getX() - $kwargs['orig']->getX();
@@ -61,12 +61,12 @@ class Vector
             return (new Vector( ['dest' => new Vertex( ['x' => $this->getX() / $this->magnitude(), 'y' => $this->getY() / $this->magnitude(), 'z' => $this->getZ() / $this->magnitude()] )] ));
     }
 
-    public function add(Vector $rhs)
+    public function add( Vector $rhs )
     {
         return (new Vector( ['dest' => new Vertex( ['x' => $this->getX() + $rhs->getX(), 'y' => $this->getY() + $rhs->getY(), 'z' => $this->getZ() + $rhs->getZ()] )] ));
     }
 
-    public function sub(Vector $rhs)
+    public function sub( Vector $rhs )
     {
         return (new Vector( ['dest' => new Vertex( ['x' => $this->getX() - $rhs->getX(), 'y' => $this->getY() - $rhs->getY(), 'z' => $this->getZ() - $rhs->getZ()] )] ));
     }
@@ -76,22 +76,22 @@ class Vector
         return (new Vector( ['dest' => new Vertex( ['x' => -$this->getX(), 'y' => -$this->getY(), 'z' => -$this->getZ()] )] ));
     }
 
-    public function scalarProduct($k)
+    public function scalarProduct( $k )
     {
         return (new Vector( ['dest' => new Vertex( ['x' => $this->getX() * $k, 'y' => $this->getY() * $k, 'z' => $this->getZ() * $k] )] ));
     }
 
-    public function dotProduct(Vector $rhs)
+    public function dotProduct( Vector $rhs )
     {
         return ($this->getX() * $rhs->getX() + $this->getY() * $rhs->getY() + $this->getZ() * $rhs->getZ());
     }
 
-    public function cos(Vector $rhs)
+    public function cos( Vector $rhs )
     {
         return $this->dotProduct($rhs) / ($this->magnitude() * $rhs->magnitude());
     }
 
-    public function crossProduct(Vector $rhs)
+    public function crossProduct( Vector $rhs )
     {
         return (new Vector( ['dest' => new Vertex( ['x' => $this->getY() * $rhs->getZ() - $this->getZ() * $rhs->getY(), 'y' => $this->getZ() * $rhs->getX() - $this->getX() * $rhs->getZ(), 'z' => $this->getX() * $rhs->getY() - $this->getY() * $rhs->getX() ] )] ));
     }

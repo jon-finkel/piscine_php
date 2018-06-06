@@ -21,7 +21,7 @@ class Matrix
     private $_matrix;
     public static $verbose = false;
 
-    private static function getConstName($k)
+    private static function getConstName( $k )
     {
         $reflect = new ReflectionClass('Matrix');
         $constants = $reflect->getConstants();
@@ -37,7 +37,7 @@ class Matrix
         }
     }
 
-    private static function getRow($l, $row)
+    private static function getRow( $l, $row )
     {
         return (sprintf("\n%s | %.2f | %.2f | %.2f | %.2f", $l, $row['x'], $row['y'], $row['z'], $row['w']));
     }
@@ -112,7 +112,7 @@ class Matrix
         ];
     }
 
-    public function __construct($kwargs)
+    public function __construct( array $kwargs )
     {
         $this->_preset = $kwargs['preset'];
         if ($this->getPreset() == Matrix::IDENTITY)
@@ -166,9 +166,9 @@ class Matrix
     public function getFar() { return ($this->_far); }
     public function getMatrix() { return ($this->_matrix); }
 
-    public function setMatrix($m) { $this->_matrix = $m; return; }
+    public function setMatrix( $m ) { $this->_matrix = $m; return; }
 
-    public function mult(Matrix $rhs)
+    public function mult( Matrix $rhs )
     {
         $tmp = new Matrix( ['preset' => null] );
         $tmp->setMatrix( [
@@ -196,7 +196,7 @@ class Matrix
         return ($tmp);
     }
 
-    public function transformVertex(Vertex $vtx)
+    public function transformVertex( Vertex $vtx )
     {
         return (new Vertex( [
             'x' => $this->getMatrix()['a']['x'] * $vtx->getX() + $this->getMatrix()['a']['y'] * $vtx->getY() + $this->getMatrix()['a']['z'] * $vtx->getZ() + $this->getMatrix()['a']['w'] * $vtx->getW(),

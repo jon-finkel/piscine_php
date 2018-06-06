@@ -1,3 +1,15 @@
+
 <- Matrix ----------------------------------------------------------------------
-No fucking way.
+Initialize a matrix and you can do shit with them.
+Args:
+ - preset:
+   - IDENTITY: no argument required
+   - SCALE: scale argument required
+   - TRANSLATION: vtc argument required
+   - RX / RY / RZ: angle argument required
+   - PROJECTION: fov, ratio, near and far arguments required
+
+Methods:
+ - mult(): multiply two matrices together
+ - transformVertex(): multiply a vertex and a matrix
 ---------------------------------------------------------------------- Matrix ->

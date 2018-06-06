@@ -1,4 +1,14 @@
 
 <- Vector ----------------------------------------------------------------------
-After 3 hours coding that shit, I really have better things to do than writing this fucking doc. Figure it out.
+Initialize a vector.
+You can also do shit with one or two vectors like:
+ - magnitude()
+ - normalize()
+ - add( Vector $vec )
+ - sub( Vector $vec )
+ - opposite()
+ - scalarProduct ( $scalar )
+ - dotProduct( Vector $vec )
+ - cos ( Vector $vec )
+ - crossProduct( Vector $vec )
 ---------------------------------------------------------------------- Vector ->
