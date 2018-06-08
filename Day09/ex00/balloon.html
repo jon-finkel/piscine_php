@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Balloon</title>
+    <style>
+        #balloon {
+            background-color: red;
+            border-radius: 100%;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="balloon">
+    </div>
+    <script>
+        var circle = document.getElementById('balloon');
+        var colors = ["red", "green", "blue"];
+        var k = 0;
+        var size = 200;
+
+        circle.addEventListener('mouseleave', function() {
+            if (size > 200)
+                size -= 5;
+            if (--k === -1)
+                k = 2;
+            circle.style.setProperty("background-color", colors[k]);
+            circle.style.setProperty("height", size + "px");
+            circle.style.setProperty("width", size + "px");
+        });
+
+        circle.addEventListener('click', function () {
+            if ((size += 10) > 420)
+                size = 200;
+            if (++k > 2)
+                k = 0;
+            circle.style.setProperty("background-color", colors[k]);
+            circle.style.setProperty("height", size + "px");
+            circle.style.setProperty("width", size + "px");
+        });
+
+    </script>
+</body>
+</html>
