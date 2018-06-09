@@ -1,29 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>TODO</title>
-</head>
-<body>
-    <button id="button">New</button>
-    <div id="ft_list">
-    </div>
-    <script>
-        var button = document.getElementById('button');
-        var div = document.getElementById('ft_list');
-        var list = [];
+    <head>
+    </head>
+    <body>
+        <div id="ft_list">
+        </div>
+        <button id="submit" onclick="add(this)">New</button>
 
-        button.addEventListener('click', function() {
-            var new_todo = prompt("What should you do next?");
-            if (new_todo !== "") {
-                list.unshift(new_todo);
-            }
-            var html = "";
-            for (var k in list) {
-                html += "<li id='" + k + "'>" + list[k] + "</li>";
-            }
-            div.innerHTML = html;
-        });
-
-    </script>
-</body>
+        <script src="todo.js"></script>
+    </body>
 </html>

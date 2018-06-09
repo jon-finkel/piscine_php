@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calc</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <form name="form">
+            <input type="text" id="left" name="left">
+            <select id="select" name="select">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="text" id="right" name="right">
+            <input type="submit" value="Try me!">
+        </form>
+    </div>
+    <script>
+        var form = $('form[name="form"]');
+
+        setInterval(function() { alert("Please, use me..."); }, 30000);
+
+        function errCheck(input) {
+            var lnum = parseFloat(input[0]);
+            var rnum = parseFloat(input[2]);
+
+            return (Number(lnum) === lnum && Number(rnum) === rnum && lnum % 1 === 0 && rnum % 1 === 0);
+        }
+
+        form.submit(function(elem) {
+            elem.preventDefault();
+
+            var input = [];
+            $.each($('form').serializeArray(), function(k, field) {
+                input[k] = field.value;
+            });
+
+            if (errCheck(input) === false) {
+                alert('Error :(');
+            }
+            else {
+                var lnum = parseInt(input[0]);
+                var op = input[1];
+                var rnum = parseInt(input[2]);
+
+                if (rnum === 0 && (op === '/' || op === '%')) {
+                    alert('It\'s over 9000!');
+                }
+                else {
+                    var result;
+                    if (op === '+') { result = lnum + rnum; }
+                    else if (op === '-') { result = lnum - rnum; }
+                    else if (op === '*') { result = lnum * rnum; }
+                    else if (op === '/') { result = lnum / rnum; }
+                    else if (op === '%') { result = lnum % rnum; }
+                    alert(result);
+                    console.log(result);
+                }
+            }
+            return false;
+        });
+    </script>
+</body>
+</html>

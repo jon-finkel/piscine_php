@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Balloon</title>
+    <style>
+        #balloon {
+            background-color: red;
+            border-radius: 100%;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="balloon">
+    </div>
+    <script>
+        var balloon = $("#balloon");
+        var size = parseInt(balloon.css("height"));
+        var k = 0;
+        var tab = ["red", "green", "blue"];
+
+        function update() {
+            console.log(size);
+            balloon.css("height", size + "px");
+            balloon.css("width", size + "px");
+            balloon.css("background-color", tab[k]);
+        }
+
+        balloon.click(function() {
+            size = (size > 410 ? 200 : size + 10);
+            k = (k === 2 ? 0 : k + 1);
+            update();
+        });
+
+        balloon.mouseleave(function () {
+            if (size > 200)
+                size -= 5;
+            k = (k === 0 ? 2 : k - 1);
+            update();
+        });
+    </script>
+</body>
+</html>
